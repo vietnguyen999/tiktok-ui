@@ -9,7 +9,6 @@ import {
     faEarthAfrica,
     faKeyboard,
     faCircleQuestion,
-    faCloudUpload,
     faUser,
     faCoins,
     faGear,
@@ -25,6 +24,8 @@ import images from '~/assets/images';
 import styles from './Header.module.scss';
 import Accountltem from '~/components/Accountltem';
 import Menu from '~/components/Popper/Menu';
+import { UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -149,7 +150,7 @@ function Header() {
                             <Tippy delay={[0, 200]} 
                             content="Upload video">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                  <UploadIcon/>
                                 </button>
                             </Tippy>
                         </>
@@ -165,8 +166,8 @@ function Header() {
                         onChange={handlemenuChange}
                     >
                         {currenUser ? (
-                            <img
-                                className={cx('user-avatar')}
+                            
+                           <Image     className={cx('user-avatar')}
                                 src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-euttp/474bae25e904fdbe89f2d125b21e0cb5~c5_100x100.jpeg?x-expires=1693994400&x-signature=kllLsVUrUGnnEsGs8f%2BNfIxjLxU%3D"
                                 alt="nguyeducviet"
                             />
