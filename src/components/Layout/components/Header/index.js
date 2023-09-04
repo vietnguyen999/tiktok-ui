@@ -25,6 +25,21 @@ const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAfrica} />,
         title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tieng viet',
+                },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -36,6 +51,7 @@ const MENU_ITEMS = [
         title: 'Keyboard shortcues',
     },
 ];
+
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
     useEffect(() => {
@@ -43,6 +59,15 @@ function Header() {
             setSearchResult([]);
         }, 0);
     }, []);
+
+    const handlemenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case 'language':
+                //handle change language
+                break;
+            default:
+        }
+    };
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -85,15 +110,20 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
-                <div className={cx('actions')}>
+                        {  currentUser ?(
+                            <div className={cx('current-user')}
+                        ) : (
+                             <div className={cx('actions')}>
                     <Button text>Upload</Button>
                     <Button primary>Log in</Button>
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handlemenuChange}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>
                     </Menu>
                 </div>
+                        )}
+               
             </div>
         </header>
     );
