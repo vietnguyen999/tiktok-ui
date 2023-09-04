@@ -110,9 +110,7 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
-                        {  currentUser ?(
-                            <div className={cx('current-user')}
-                        ) : (
+                        
                              <div className={cx('actions')}>
                     <Button text>Upload</Button>
                     <Button primary>Log in</Button>
@@ -122,7 +120,7 @@ function Header() {
                         </button>
                     </Menu>
                 </div>
-                        )}
+                       
                
             </div>
         </header>
