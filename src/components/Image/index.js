@@ -3,7 +3,6 @@ import { forwardRef, useState } from 'react';
 import images from '~/assets/images';
 import style from './Image.module.scss';
 
-console.log(images.noImage);
 const Image = forwardRef(
     (
         {
