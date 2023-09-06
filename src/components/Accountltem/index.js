@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import styles from './Accountltem.module.scss';
@@ -22,6 +23,9 @@ function Accountltem({data}) {
             </div>
         </Link>
     );
+}
+Accountltem.propTypes ={
+    data: PropTypes.object.isRequired,
 }
 
 export default Accountltem;
