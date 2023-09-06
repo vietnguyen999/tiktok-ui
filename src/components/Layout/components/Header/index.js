@@ -41,6 +41,17 @@ const MENU_ITEMS = [
                     code: 'vi',
                     title: 'Tieng viet',
                 },
+                 {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tieng viet',
+                },
+                 {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tieng viet',
+                },
+                
             ],
         },
     },

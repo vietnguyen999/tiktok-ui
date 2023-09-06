@@ -47,12 +47,15 @@ function Search() {
     };
     const handleChange = (e) => {
         const searchValue = e.target.value;
-        if (!searchValue.startsWith(' ') ) {
+        if (!searchValue.startsWith(' ')) {
             setSearchvalue(searchValue);
         }
     };
 
     return (
+        //Using a wrapper <div> or <span> tag around the reference element 
+        //solves this by creating a new parentNode context. 
+        <div>
         <HeadlessTippy
             interactive
             visible={showResult && searchResult.length > 0}
@@ -89,11 +92,15 @@ function Search() {
                         icon={faSpinner}
                     />
                 )}
-                <button className={cx('search-btn')} onMouseDown={(e)=>e.preventDefault()}>
+                <button
+                    className={cx('search-btn')}
+                    onMouseDown={(e) => e.preventDefault()}
+                >
                     <SearchIcon />
                 </button>
             </div>
         </HeadlessTippy>
+        </div>
     );
 }
 
