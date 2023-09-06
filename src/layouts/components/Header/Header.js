@@ -67,6 +67,7 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
+    const currenUser = true;
  
 
     const handlemenuChange = (menuItem) => {
@@ -102,7 +103,6 @@ function Header() {
             separate: true,
         },
     ];
-    const currenUser = true;
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
